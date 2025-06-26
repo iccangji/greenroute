@@ -1,0 +1,41 @@
+{
+  "name": "backend-greenroute",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon",
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:fresh": "sequelize-cli db:migrate:undo:all && sequelize-cli db:migrate",
+    "seed": "sequelize-cli db:seed:all",
+    "lint": "eslint ./",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@robzzson/silhouette": "^0.0.7",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^9.0.2",
+    "ml-kmeans": "^6.0.0",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.14.1",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.4.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "eslint": "^9.29.0",
+    "globals": "^16.2.0",
+    "jest": "^30.0.0",
+    "nodemon": "^3.1.10",
+    "winston": "^3.7.2"
+  }
+}

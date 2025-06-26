@@ -1,0 +1,82 @@
+Skenario Pengujian
+1. Tidak ada optimasi setelah klaster optimal-K = 0
+Memastikan:
+- function GA tidak dipanggil
+- function SA tidak dipanggil
+- hasil rute tidak ada
+2. GA-SA
+Pemanggilan masing-masing 1 kali
+const params = {
+            pop_size: 10,
+            max_gen: 1000,
+            crossover_rate: 0.6,
+            mutation_rate: 0.6,
+            initial_temp: 1000,
+            stop_temp: 300,
+            cooling_rate: 0.3
+        };
+
+
+Memastikan:
+- function GA dipanggil
+- function SA dipanggil
+- function function mutasi dalam GA dipanggil 1 kali
+- function function crossover dalam GA dipanggil 1 kali
+- function modifikasi solusi dalam SA dipanggil 1 kali
+- ada rute hasil optimasi
+
+3. Tidak ada GA dan SA
+const params = {
+            pop_size: 10,
+            max_gen: 0,
+            crossover_rate: 0.6,
+            mutation_rate: 0.6,
+            initial_temp: 0,
+            stop_temp: 0,
+            cooling_rate: 0.3
+        };
+
+Memastikan:
+- function GA dipanggil
+- function SA dipanggil
+- function function mutasi dalam GA tidak dipanggil
+- function function crossover dalam GA tidak dipanggil
+- function modifikasi solusi dalam SA tidak dipanggil
+- ada rute hasil optimasi
+
+4. Tidak ada GA - SA loop
+const params = {
+            pop_size: 1,
+            max_gen: 0,
+            crossover_rate: 0.5,
+            mutation_rate: 0.5,
+            initial_temp: 1000,
+            stop_temp: 0,
+            cooling_rate: 0.3
+        };
+
+Memastikan:
+- function GA dipanggil
+- function SA dipanggil
+- function function mutasi dalam GA tidak dipanggil
+- function function crossover dalam GA tidak dipanggil
+- function modifikasi solusi dalam SA dipanggi lebih dari 1 kali
+- ada rute hasil optimasi
+
+5. GA loop - SA loop
+const params = {
+            pop_size: 10,
+            max_gen: 1000,
+            crossover_rate: 0.6,
+            mutation_rate: 0.6,
+            initial_temp: 1000,
+            stop_temp: 0,
+            cooling_rate: 0.3
+        };
+
+- function GA dipanggil
+- function SA dipanggil
+- function function mutasi dalam GA dipanggil lebih dari 1 kali
+- function function crossover dalam GA dipanggil lebih dari 1 kali
+- function modifikasi solusi dalam SA dipanggi lebih dari 1 kali
+- ada rute hasil optimasi
